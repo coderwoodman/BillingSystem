@@ -1,1 +1,3 @@
 /build/
+/bin/
+/billtest/WEB-INF/classes/com/coderwood/www/*.class
