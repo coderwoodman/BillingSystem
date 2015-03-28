@@ -26,10 +26,6 @@ public class LoginServlet extends HttpServlet{
 		out.close();
 	}
 	
-	public String getServletInfo(){
-		return "coderwood";
-	}
-	
 	public void destroy()
 	{
 	}

@@ -49,7 +49,7 @@
 
     <div class="container">
 
-      <form class="form-signin" action="loginvalid" method="post">
+      <form class="form-signin" action="login.spring" method="post">
         <h2 class="form-signin-heading">Please sign in</h2>
         <input type="text" id="username" name="username" class="input-block-level" placeholder="Email address">
         <input type="password" id="password" name="password"  class="input-block-level" placeholder="Password">
