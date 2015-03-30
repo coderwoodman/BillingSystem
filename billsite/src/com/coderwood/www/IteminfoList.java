@@ -21,8 +21,8 @@ public class IteminfoList {
 	@RequestMapping("/showiteminfo")
 	public ModelAndView ShowIteminfo() {
 		Iteminfo iteminfo1=new Iteminfo();
-		iteminfo1.ItemName="°¡¹þ";
-		iteminfo1.ItemID=11;
+		//iteminfo1.ItemName="°¡¹þ";
+		//iteminfo1.ItemID=11;
 		
 		ModelAndView view=new ModelAndView("ItemDetail.jsp");
 		view.addObject("iteminfo1", iteminfo1);
@@ -32,7 +32,7 @@ public class IteminfoList {
 	@RequestMapping("/listiteminfo")
 	public ModelAndView ListIteminfo() {
 		Iteminfo iteminfo1=new Iteminfo();
-		iteminfo1.ItemID=11;
+		//iteminfo1.ItemID=11;
 		
 		ModelAndView view=new ModelAndView("itemlist.jsp");
 		view.addObject("iteminfo1", iteminfo1);
@@ -63,9 +63,9 @@ public class IteminfoList {
 			ResultSetMetaData rmeta = (ResultSetMetaData) rs.getMetaData();
 			while (rs.next()) {
 				Iteminfo iteminfo = new Iteminfo();
-				iteminfo.ItemID = Integer.parseInt(rs.getString(1));
-				iteminfo.ItemName = rs.getString(2);
-				iteminfo.Itemsort = Integer.parseInt(rs.getString(3));
+				//iteminfo.ItemID = Integer.parseInt(rs.getString(1));
+				//iteminfo.ItemName = rs.getString(2);
+				//iteminfo.Itemsort = Integer.parseInt(rs.getString(3));
 				// iteminfo.dataCreateTime=rs.getString(5);
 				iteminfoList.add(iteminfo);
 			}

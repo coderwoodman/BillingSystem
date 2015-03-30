@@ -1,14 +1,8 @@
-package com.coderwood.Entity;
+package com.coderwood.bill.model;
 
-import java.sql.Date;
-
-public class Iteminfo {
+public class BillItem {
 	private int itemID;
 	private String itemName;
-	private int itemsort;
-	private int isValid;
-	private Date dataCreateTime;
-	private Date datachangeLastTime;
 	
 	public int getItemID() {
         return itemID;
@@ -25,5 +19,5 @@ public class Iteminfo {
 	public void setItemName(String itemName) {
 		this.itemName=itemName;
     }
-	
+
 }
