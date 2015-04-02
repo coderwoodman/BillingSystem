@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.coderwood.bill.inter.IBillItemDetailOperation">     
+    <resultMap type="BillItemDetail" id="resultListBillItem">
+		<id column="detailid" property="detailID"/>
+		<result column="itemid" property="itemID"/>
+		<result column="itemname" property="itemName"/>
+	</resultMap>
+	
+	 <select id="selectBillItemDetailByID" parameterType="int" resultType="BillItemDetail">
+        select * from `billitemdetail` where detailid = #{detailid}
+    </select>
+     <select id="selectBillItemDetails" parameterType="string" resultMap="resultListBillItemDetail">
+        select * from `billitemdetail` where itemid = #{itemID}
+    </select>
+    <insert id="addBillItemDetail" parameterType="BillItemDetail" useGeneratedKeys="true" keyProperty="detailid">
+    	insert into billitemdetail(itemid,itemdesc) values(#{itemid,itemdesc})
+    </insert>
+    <delete id="deleteBillItemDetail" parameterType="int">
+    	delete from billitemdetail where detailid= #{detailid}
+    </delete>
+	 <update id="updateBillItemDetail" parameterType="BillItemDetail">
+    	update billitemdetail set itemid=#{itemid},itemname=#{itemName} where detailid= #{detailid}
+    </update> 
+      
+</mapper>
+

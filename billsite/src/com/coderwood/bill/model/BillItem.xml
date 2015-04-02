@@ -9,7 +9,7 @@
 	</resultMap>
 
     <select id="selectBillItemByID" parameterType="int" resultType="BillItem">
-        select * from `billitem` where itemid = #{id}
+        select * from `billitem` where itemid = #{itemid}
     </select>
      <select id="selectBillItems" parameterType="string" resultMap="resultListBillItem">
         select * from `billitem` where itemname like #{itemname}
@@ -22,6 +22,6 @@
     </delete>
 	 <update id="updateBillItem" parameterType="BillItem">
     	update billitem set itemname=#{itemName} where itemid= #{itemID}
-    </update>   
+    </update>  
 </mapper>
 

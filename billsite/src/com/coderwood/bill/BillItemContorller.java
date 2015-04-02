@@ -8,8 +8,10 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
+import com.coderwood.bill.inter.IBillItemDetailOperation;
 import com.coderwood.bill.inter.IBillItemOperation;
 import com.coderwood.bill.model.BillItem;
+import com.coderwood.bill.model.BillItemDetail;
 
 public class BillItemContorller {
 	 private static SqlSessionFactory sqlSessionFactory;
@@ -29,14 +31,29 @@ public class BillItemContorller {
 	    }
 	    
 	    public static void main(String[] args) {
-	    	BillItem billItem=GetBillItemByID(12);
-	    	billItem.setItemName("投资2");
+//	    	BillItem billItem=GetBillItemByID(12);
+//	    	billItem.setItemName("投资2");
+//	    	
+//	    	//AddBillItem(billItem);
+//	    	
+//	    	UpdateBillItem(billItem);
 	    	
-	    	//AddBillItem(billItem);
-	    	
-	    	UpdateBillItem(billItem);
-	    	
+	    	BillItemDetail billItemDetail=new BillItemDetail();
+	    	billItemDetail.setItemID(1);
+	    	billItemDetail.setItemDesc("我的工资啊");
+	    	AddBillItem(billItemDetail);
 	    }
+	    
+	    public static void AddBillItem(BillItemDetail billItemDetail) {
+			SqlSession session = sqlSessionFactory.openSession();
+	        try {
+	        	IBillItemDetailOperation billItemDetailOperation=session.getMapper(IBillItemDetailOperation.class);
+	        	billItemDetailOperation.addBillItem(billItemDetail);
+	        	session.commit();
+	        } finally {
+	        session.close();
+	        }
+		}
 	    
 	    public static void UpdateBillItem(BillItem billItem) {
 			SqlSession session = sqlSessionFactory.openSession();
